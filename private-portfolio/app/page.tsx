@@ -91,7 +91,9 @@ export default function Home() {
   return (
     <>
       <SpaceBackground />
-      <RocketCursor />
+      <div className="hidden md:block">
+        <RocketCursor />
+      </div>
       <main className="relative min-h-screen bg-gradient-to-b from-[--color-cosmic-950] via-[--color-void-950] to-black text-slate-100">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_200px_at_10%_-10%,rgba(99,102,241,0.15),transparent)]" />
 

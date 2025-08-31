@@ -42,7 +42,7 @@ export default function ControlsPanel() {
   return (
     <>
       <button
-        className="asteroid-fab z-[70]"
+        className="hidden sm:block asteroid-fab z-[70]"
         onClick={onClick}
         aria-label="Meteor shower"
         onMouseMove={(e) => {
