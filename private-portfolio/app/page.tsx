@@ -167,7 +167,6 @@ export default function Home() {
             ))}
           </h1>
           <p className="mt-2 max-w-3xl text-sm md:text-base text-white/85">5+ years in AI/automation</p>
-          <p className="mt-1 text-sm md:text-base text-white/85">by Salim Arikat</p>
         </section>
 
         
