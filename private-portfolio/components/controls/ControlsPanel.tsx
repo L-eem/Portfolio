@@ -9,7 +9,7 @@ export default function ControlsPanel() {
     btn.classList.remove('animate-button-burst');
     // force reflow to restart animation
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    (btn as any).offsetHeight;
+    (btn as unknown as { offsetHeight: number }).offsetHeight;
     btn.classList.add('animate-button-burst');
     // spark element
     const spark = document.createElement('span');

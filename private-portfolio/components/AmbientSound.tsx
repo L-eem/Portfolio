@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useControls } from './controls/ControlsContext';
 
 export default function AmbientSound() {
@@ -22,7 +22,9 @@ export default function AmbientSound() {
       return;
     }
 
-    const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+    const anyWindow = window as unknown as { webkitAudioContext?: typeof AudioContext };
+    const Ctor = window.AudioContext || anyWindow.webkitAudioContext;
+    const ctx = new Ctor();
     ctxRef.current = ctx;
     const o = ctx.createOscillator();
     const g = ctx.createGain();

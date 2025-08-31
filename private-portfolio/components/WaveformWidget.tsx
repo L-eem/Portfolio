@@ -14,8 +14,8 @@ export default function WaveformWidget() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    let w = (canvas.width = 240);
-    let h = (canvas.height = 50);
+    const w = (canvas.width = 240);
+    const h = (canvas.height = 50);
     const draw = () => {
       if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, w, h);

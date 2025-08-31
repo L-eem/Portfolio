@@ -170,7 +170,7 @@ export default function SpaceBackground() {
       setTimeout(() => {
         const meteorCount = Math.min(6, Math.max(3, Math.round((w + h) / 1200)));
         // Keep only normal meteors and refill if needed
-        let normals = meteorsRef.current.filter((m) => m.mode === 'n');
+        const normals = meteorsRef.current.filter((m) => m.mode === 'n');
         while (normals.length < meteorCount) normals.push(spawnMeteorNormal());
         meteorsRef.current = normals.slice(0, meteorCount);
       }, 3000);
