@@ -84,6 +84,13 @@ body {
 }
 .badge-glow { animation: glow-pulse 2.4s ease-in-out infinite; }
 
+/* CTA glow */
+@keyframes cta-breathe {
+  0%, 100% { box-shadow: 0 0 24px rgba(167,139,250,0.35), 0 0 0 rgba(0,245,212,0); transform: translateZ(0); }
+  50% { box-shadow: 0 0 40px rgba(167,139,250,0.6), 0 0 26px rgba(0,245,212,0.25); transform: translateZ(0) scale(1.02); }
+}
+.cta-glow { animation: cta-breathe 2.2s ease-in-out infinite; }
+
 @keyframes flame-flicker {
   0%, 100% { transform: scaleY(0.9) scaleX(0.95); opacity: 0.85; }
   50% { transform: scaleY(1.1) scaleX(1.05); opacity: 1; }

@@ -99,23 +99,43 @@ export default function Home() {
 
         {/* Upwork-style profile header */}
         <section className="mx-auto w-full max-w-6xl px-4 md:px-6 mt-6 md:mt-10">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-5 rounded-2xl border border-white/10 bg-[color:rgb(10_12_18_/0.6)] p-5 backdrop-blur-sm">
+          <div className="flex flex-col md:grid md:grid-cols-[auto,1fr,auto] items-start md:items-center gap-6 md:gap-8 rounded-2xl border border-white/10 bg-[color:rgb(10_12_18_/0.6)] p-5 md:p-7 backdrop-blur-sm md:-ml-2">
             <div className="flex items-center gap-4">
               <img
                 src="/pfp.jpeg"
                 alt="Salim Arikat"
-                className="h-16 w-16 rounded-full object-cover border border-white/15"
+                className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border border-white/15"
               />
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-white">Salim Arikat</h1>
-                <p className="mt-1 text-sm md:text-base text-white/85">Voice AI Developer | Automation & System Integrations</p>
-                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-                  <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-emerald-300">Available now</span>
-                  <span className="badge-glow rounded-full border border-emerald-400/40 bg-emerald-400/15 px-2 py-0.5 text-emerald-200">100% client satisfaction</span>
+                <h1 className="text-2xl md:text-4xl font-bold text-white">Salim Arikat</h1>
+                <p className="mt-2 text-sm md:text-lg text-white/85">Voice AI Developer | Automation & System Integrations</p>
+                <div className="mt-3 md:mt-3 flex flex-wrap md:flex-nowrap items-center gap-2 text-xs md:text-sm whitespace-nowrap">
+                  <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 md:px-3 md:py-1 text-emerald-300">Available now</span>
+                  <span className="badge-glow rounded-full border border-emerald-400/40 bg-emerald-400/15 px-2 py-0.5 md:px-3 md:py-1 text-emerald-200">100% client satisfaction</span>
                 </div>
               </div>
             </div>
-            <div className="md:ml-auto w-full flex items-center justify-center md:justify-end gap-3">
+            {/* Desktop skills row to utilize space */}
+            <div className="hidden md:flex md:col-start-2 items-center justify-start gap-2 flex-wrap">
+              <span className="text-xs text-white/60 mr-1">Top skills:</span>
+              {[
+                'Node.js',
+                'API integrations',
+                'n8n',
+                'Make.com',
+                'Voiceflow',
+                'Next.js',
+                'Vercel',
+                'Supabase',
+                'Prompt engineering',
+                'Retell',
+              ].map((s) => (
+                <span key={s} className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80">
+                  {s}
+                </span>
+              ))}
+            </div>
+            <div className="md:ml-0 w-full md:w-auto mt-3 md:mt-0 flex items-center justify-center md:justify-end gap-3 md:gap-4 md:col-start-3">
               <span
                 onMouseEnter={(e) => {
                   const r = (e.currentTarget as HTMLSpanElement).getBoundingClientRect();
@@ -123,7 +143,7 @@ export default function Home() {
                 }}
                 onMouseLeave={() => setMagnetTarget(null)}
               >
-                <NeoButton href="/contact">Book a call</NeoButton>
+                <NeoButton href="/contact" className="cta-glow px-5 py-2.5">Book a call</NeoButton>
               </span>
             </div>
           </div>
