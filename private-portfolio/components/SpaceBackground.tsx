@@ -128,15 +128,30 @@ export default function SpaceBackground() {
         const ty = (ny / mag) * len;
 
         const grad = ctx.createLinearGradient(m.x, m.y, m.x + tx, m.y + ty);
-        grad.addColorStop(0, "rgba(255,255,255,0.9)");
-        grad.addColorStop(0.3, "rgba(255, 250, 200, 0.7)");
-        grad.addColorStop(1, "rgba(255, 61, 129, 0)");
+        const glow = m.mode === 'b' ? 1.0 : 0.7;
+        grad.addColorStop(0, `rgba(255,255,255,${0.9 * glow})`);
+        grad.addColorStop(0.25, `rgba(122,248,230,${0.65 * glow})`);
+        grad.addColorStop(0.6, `rgba(167,139,250,${0.35 * glow})`);
+        grad.addColorStop(1, `rgba(255, 61, 129, 0)`);
         ctx.strokeStyle = grad;
         ctx.lineWidth = m.thickness;
         ctx.beginPath();
         ctx.moveTo(m.x, m.y);
         ctx.lineTo(m.x + tx, m.y + ty);
         ctx.stroke();
+
+        // Glow halo at meteor head during bursts
+        if (m.mode === 'b') {
+          const r = 6 + (m.thickness * 1.5);
+          const radial = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, r * 3);
+          radial.addColorStop(0, 'rgba(255,255,255,0.35)');
+          radial.addColorStop(0.4, 'rgba(122,248,230,0.28)');
+          radial.addColorStop(1, 'rgba(0,0,0,0)');
+          ctx.fillStyle = radial;
+          ctx.beginPath();
+          ctx.arc(m.x, m.y, r * 3, 0, Math.PI * 2);
+          ctx.fill();
+        }
 
         // respawn when offscreen or expired
         const outOfScreen = m.x < -200 || m.x > w + 200 || m.y < -200 || m.y > h + 200;

@@ -30,7 +30,13 @@ export default function ControlsPanel() {
       btn.appendChild(frag);
       setTimeout(() => frag.remove(), 800);
     }
+    // Trigger app-wide meteor burst
     triggerMeteorBurst();
+    // Screen shake on body
+    document.body.classList.remove('shake-screen');
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    (document.body as unknown as { offsetHeight: number }).offsetHeight;
+    document.body.classList.add('shake-screen');
   };
 
   return (
