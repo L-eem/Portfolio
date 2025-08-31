@@ -10,8 +10,9 @@ import Navbar from "@/components/Navbar";
 import CalEmbed from "@/components/CalEmbed";
 
 export default function ContactPage() {
-  const calUser = process.env.NEXT_PUBLIC_CAL_USERNAME || "your-cal-username";
-  const calSlug = process.env.NEXT_PUBLIC_CAL_SLUG || "intro";
+  // Fallbacks ensure embed works even if env vars are missing on Vercel
+  const calUser = process.env.NEXT_PUBLIC_CAL_USERNAME || "salim-a";
+  const calSlug = process.env.NEXT_PUBLIC_CAL_SLUG || "discovery-call";
   const calLink = `${calUser}/${calSlug}`;
   const fullUrl = process.env.NEXT_PUBLIC_CAL_FULL_URL;
 
