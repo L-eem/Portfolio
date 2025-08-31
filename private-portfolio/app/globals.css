@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #e5e7eb;
+}
+
+@theme inline {
+  /* Map base tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* AI-inspired palette */
+  --color-cosmic-950: #0b0f17;
+  --color-void-950: #080a0f;
+  --color-void-900: #0a0c12;
+  --color-void-800: #0f1320;
+
+  --color-iris-200: #c7b8ff;
+  --color-iris-400: #a78bfa;
+  --color-iris-500: #6c5ce7;
+
+  --color-plasma-400: #ff6fa3;
+  --color-plasma-500: #ff3d81;
+
+  --color-aqua-300: #7af8e6;
+  --color-aqua-400: #00f5d4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #e5e7eb;
+  }
+}
+
+/* Global base styles */
+html, body, #__next { height: 100%; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Animations */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-4px) rotate(3deg); }
+}
+
+.animate-gradient-x { animation: gradient-x 4s ease infinite; background-size: 300% 300%; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* Vertical bob for whole buttons/links */
+@keyframes bob-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-bob-y { animation: bob-y 4.2s ease-in-out infinite; }
+
+@keyframes flame-flicker {
+  0%, 100% { transform: scaleY(0.9) scaleX(0.95); opacity: 0.85; }
+  50% { transform: scaleY(1.1) scaleX(1.05); opacity: 1; }
+}
+
+.flame {
+  animation: flame-flicker 0.2s ease-in-out infinite;
+  filter: blur(0.2px) drop-shadow(0 0 6px rgba(255, 111, 163, 0.9));
+}
+
+.rocket-glow {
+  filter: drop-shadow(0 0 6px rgba(167, 139, 250, 0.6)) drop-shadow(0 0 14px rgba(0, 245, 212, 0.35));
+}
+
+/* Meteor button click animation */
+@keyframes button-burst {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(167,139,250,0); }
+  50% { transform: scale(1.06); box-shadow: 0 0 24px rgba(167,139,250,0.45); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(167,139,250,0); }
+}
+.animate-button-burst { animation: button-burst 500ms ease-out; }
+
+@keyframes spark-pop {
+  0% { transform: translate(-50%, -50%) scale(0.2); opacity: 0.9; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+}
+.spark {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 14px; height: 14px;
+  background: radial-gradient(circle, rgba(122,248,230,0.9) 0%, rgba(167,139,250,0.6) 45%, rgba(255,61,129,0) 70%);
+  border-radius: 9999px;
+  animation: spark-pop 420ms ease-out forwards;
+  pointer-events: none;
+}
+
+/* Quick actions fade */
+.quick-actions { opacity: 0; pointer-events: none; transition: opacity 200ms ease; }
+.group:hover .quick-actions { opacity: 1; pointer-events: auto; }
+
+/* Modal zoom-in */
+@keyframes modal-zoom {
+  0% { transform: scale(0.96) translateY(6px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+.animate-modal-zoom { animation: modal-zoom 200ms ease-out; }
+
+@keyframes pulse {
+  0% { opacity: 0; transform: scaleX(0.8); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: scaleX(1.2); }
+}
+
+/* Smoother route transition */
+@keyframes warp-fade {
+  0% { opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+.animate-warp-fade { animation: warp-fade 900ms ease-in-out; }
+
+@keyframes warp-streak {
+  0% { opacity: 0; transform: scaleX(0.85); filter: blur(1.2px); }
+  50% { opacity: 1; filter: blur(0.6px); }
+  100% { opacity: 0; transform: scaleX(1.25); filter: blur(1.6px); }
+}
+.animate-warp-streak { animation: warp-streak 900ms ease-in-out; will-change: opacity, transform, filter; }
+
+/* Heading hover shimmer for section titles */
+.heading-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(75deg, rgba(255,255,255,0.0) 35%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0.0) 65%);
+  transform: translateX(-120%);
+  opacity: 0;
+  mix-blend-mode: screen;
+  transition: transform 600ms ease, opacity 600ms ease;
+  pointer-events: none;
+}
+.group:hover .heading-sheen { transform: translateX(120%); opacity: 0.25; }
+
+/* Zero-gravity floating letters */
+@keyframes float-letter {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+.float-letter {
+  display: inline-block;
+  will-change: transform;
+  animation: float-letter 3.6s ease-in-out infinite;
+}
+.float-space { display: inline-block; width: 0.3em; }
+
+/* Touch/mobile improvements */
+@media (hover: none) {
+  .hide-on-touch { display: none !important; }
+  .quick-actions { opacity: 1; pointer-events: auto; }
+}
+
+@media (max-width: 640px) {
+  .asteroid-fab { right: 12px; bottom: 12px; width: 76px; height: 76px; }
+}
+
+/* Asteroid-styled control button */
+.btn-asteroid {
+  position: relative;
+  border-radius: 9999px;
+  background:
+    radial-gradient(40px 40px at 22% 30%, rgba(255,255,255,0.06), rgba(0,0,0,0) 60%),
+    radial-gradient(50px 50px at 70% 65%, rgba(255,255,255,0.04), rgba(0,0,0,0) 60%),
+    linear-gradient(135deg, #2b2f3a, #1f2330);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.btn-asteroid:hover {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 0 20px rgba(0,245,212,0.18);
+}
+.btn-asteroid .crater {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), rgba(0,0,0,0.6) 65%);
+  opacity: 0.55;
+  filter: blur(0.2px);
+  transition: transform 120ms ease;
+}
+.btn-asteroid:hover .crater { transform: translateY(-1px); }
+
+/* Large floating asteroid FAB */
+.asteroid-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 110px;
+  height: 110px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background:
+    radial-gradient(44px 44px at 28% 32%, rgba(255,255,255,0.08), rgba(0,0,0,0) 62%),
+    radial-gradient(52px 52px at 72% 68%, rgba(255,255,255,0.06), rgba(0,0,0,0) 60%),
+    linear-gradient(135deg, #353a48, #222838);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.06),
+    0 10px 30px rgba(0,0,0,0.35),
+    0 0 28px rgba(99,102,241,0.18);
+  cursor: pointer;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(var(--s, 1));
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.asteroid-fab:hover {
+  --s: 1.03;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,0.1),
+    0 14px 36px rgba(0,0,0,0.45),
+    0 0 40px rgba(99,102,241,0.30),
+    0 0 52px rgba(0,245,212,0.28);
+}
+.asteroid-fab::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(60% 60% at 30% 25%, rgba(255,255,255,0.22), rgba(255,255,255,0) 60%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.asteroid-fab::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 70%;
+  height: 16px;
+  transform: translate(-50%, -6px);
+  background: radial-gradient(50% 100% at 50% 0%, rgba(0,0,0,0.5), rgba(0,0,0,0));
+  filter: blur(10px);
+  pointer-events: none;
+}
+.asteroid-fab .crater {
+  position: absolute;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.1), rgba(0,0,0,0.65) 70%);
+  opacity: 0.6;
+}
+
+/* Hover orbit and ring effects */
+@keyframes sheen {
+  0% { transform: translateX(-120%) rotate(15deg); opacity: .0; }
+  20% { opacity: .35; }
+  100% { transform: translateX(120%) rotate(15deg); opacity: 0; }
+}
+@keyframes fissure-flicker {
+  0%, 100% { opacity: .4; filter: blur(2px) drop-shadow(0 0 6px rgba(255,61,129,.3)); }
+  50% { opacity: .95; filter: blur(1.4px) drop-shadow(0 0 10px rgba(255,61,129,.55)); }
+}
+.asteroid-fab .sheen { display: none; }
+.asteroid-fab .fissure { display: none; }
+
+/* Break-apart fragments */
+@keyframes fragment-flight {
+  0% { transform: translate(0,0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0.6); opacity: 0; }
+}
+.fragment {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(148,163,184,0.95) 0%, rgba(75,85,99,0.9) 60%, rgba(0,0,0,0.2));
+  box-shadow: 0 0 10px rgba(167,139,250,0.35);
+  animation: fragment-flight 700ms ease-out forwards;
+  pointer-events: none;
+}
