@@ -97,6 +97,38 @@ export default function Home() {
 
         <Navbar />
 
+        {/* Upwork-style profile header */}
+        <section className="mx-auto w-full max-w-6xl px-4 md:px-6 mt-6 md:mt-10">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-5 rounded-2xl border border-white/10 bg-[color:rgb(10_12_18_/0.6)] p-5 backdrop-blur-sm">
+            <div className="flex items-center gap-4">
+              <img
+                src="/pfp.jpeg"
+                alt="Salim Arikat"
+                className="h-16 w-16 rounded-full object-cover border border-white/15"
+              />
+              <div>
+                <h1 className="text-2xl md:text-3xl font-bold text-white">Salim Arikat</h1>
+                <p className="mt-1 text-sm md:text-base text-white/85">Voice AI Developer | Automation & System Integrations</p>
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                  <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-emerald-300">Available now</span>
+                  <span className="badge-glow rounded-full border border-emerald-400/40 bg-emerald-400/15 px-2 py-0.5 text-emerald-200">100% client satisfaction</span>
+                </div>
+              </div>
+            </div>
+            <div className="ml-auto flex items-center gap-3">
+              <span
+                onMouseEnter={(e) => {
+                  const r = (e.currentTarget as HTMLSpanElement).getBoundingClientRect();
+                  setMagnetTarget({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+                }}
+                onMouseLeave={() => setMagnetTarget(null)}
+              >
+                <NeoButton href="/contact">Book a call</NeoButton>
+              </span>
+            </div>
+          </div>
+        </section>
+
         <section className="mx-auto w-full max-w-6xl px-4 md:px-6 mt-6 md:mt-10">
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] inline-block">
             {"Recent AI/Automation Projects".split("").map((ch, i) => (

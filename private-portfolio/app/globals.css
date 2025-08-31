@@ -77,6 +77,13 @@ body {
 .shake-screen { animation: screen-shake 520ms ease; }
 @media (prefers-reduced-motion: reduce) { .shake-screen { animation: none; } }
 
+/* Badge glow for satisfaction indicator */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(16,185,129,0); transform: translateZ(0) scale(1); }
+  50% { box-shadow: 0 0 24px rgba(16,185,129,0.45); transform: translateZ(0) scale(1.03); }
+}
+.badge-glow { animation: glow-pulse 2.4s ease-in-out infinite; }
+
 @keyframes flame-flicker {
   0%, 100% { transform: scaleY(0.9) scaleX(0.95); opacity: 0.85; }
   50% { transform: scaleY(1.1) scaleX(1.05); opacity: 1; }
