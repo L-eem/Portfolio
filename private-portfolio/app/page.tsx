@@ -123,11 +123,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="mx-auto w-full max-w-6xl px-4 md:px-6 pb-10 text-sm text-white/80">
-          <div className="flex items-center justify-start">
-            <span>© {year} • Salim Arikat</span>
-          </div>
-        </footer>
+        
 
         
       </main>
