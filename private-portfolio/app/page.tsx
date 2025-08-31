@@ -115,7 +115,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="ml-auto flex items-center gap-3">
+            <div className="md:ml-auto w-full flex items-center justify-center md:justify-end gap-3">
               <span
                 onMouseEnter={(e) => {
                   const r = (e.currentTarget as HTMLSpanElement).getBoundingClientRect();
