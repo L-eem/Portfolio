@@ -130,7 +130,10 @@ export default function Home() {
         </section>
 
         <section className="mx-auto w-full max-w-6xl px-4 md:px-6 mt-6 md:mt-10">
-          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] inline-block">
+          {/* Mobile: plain heading for clean wrapping */}
+          <h1 className="md:hidden text-3xl font-extrabold tracking-tight text-white">Recent AI/Automation Projects</h1>
+          {/* Desktop: zero-gravity per-letter */}
+          <h1 className="hidden md:inline-block md:text-5xl text-3xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
             {"Recent AI/Automation Projects".split("").map((ch, i) => (
               ch === " " ? (
                 <span key={i} className="float-space" />
