@@ -30,7 +30,7 @@ export default function CalEmbed({ calLink, fullUrl }: { calLink?: string; fullU
   }, []);
 
   return (
-    <div className="h-[80vh] w-full">
+    <div className="w-full h-[70svh] md:h-[80vh]">
       <Cal calLink={link} style={{ width: '100%', height: '100%' }} config={{ layout: 'month_view' } as any} />
     </div>
   );
