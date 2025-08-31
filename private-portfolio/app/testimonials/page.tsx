@@ -51,6 +51,14 @@ const testimonials: Testimonial[] = [
     role: "CEO",
     company: "Upside AI",
   },
+  {
+    id: "ritesh",
+    quote:
+      "Salim has been working with me on multiple software automation projects. He is extremely determined to get the job done with high quality and efficiency. He does not cut any corners when developing and makes sure the deliverable is above and beyond the call of duty.",
+    author: "Ritesh V.",
+    role: "CEO",
+    company: "Slyte",
+  },
 ];
 
 export default function TestimonialsPage() {
