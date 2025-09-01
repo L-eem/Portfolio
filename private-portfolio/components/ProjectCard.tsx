@@ -108,16 +108,16 @@ export default function ProjectCard({
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                   <h4 className="text-sm font-semibold text-white/90">Time comparison</h4>
                   <ul className="mt-2 list-none pl-0 text-sm text-slate-300">
-                    <li>Manual: 2,500 profiles × 1 min = 2,500 min (≈ 41.7 hours)</li>
-                    <li>Automation runtime: ~5 hours (hands-off)</li>
-                    <li>Human time saved per run: ≈ 41.7 hours</li>
+                    <li>Manual: 2,500 profiles × 2 mins = 5,000 min (≈ 83.33 hours)</li>
+                    <li>Automation runtime: ~5 hours (hands‑off)</li>
+                    <li>Human time saved per run: ≈ 78.33 hours</li>
                   </ul>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                   <h4 className="text-sm font-semibold text-white/90">Cost framing</h4>
                   <ul className="mt-2 list-none pl-0 text-sm text-slate-300">
-                    <li>At $15/hr data entry: ≈ $625 saved per run</li>
-                    <li>Calendar time reduction: ~88% faster (41.7h → ~5h)</li>
+                    <li>At £12/hr data entry: 83.33 hrs × £12 = £999.96 saved per run</li>
+                    <li>Calendar time reduction: ~94% faster (83.33h → ~5h)</li>
                   </ul>
                 </div>
               </div>
@@ -128,6 +128,14 @@ export default function ProjectCard({
                   <li>Market Value, Agency, Last Contract Extension (if available)</li>
                   <li>Commercial Outfitter, Transfermarkt ID & Profile URL</li>
                 </ul>
+              </div>
+              <div className="mt-5 rounded-xl border border-white/10 bg-white/5 p-4">
+                <h4 className="text-sm font-semibold text-white/90">Annualized impact</h4>
+                <ul className="mt-2 list-none pl-0 text-sm text-slate-300">
+                  <li>≈ £1,000 saved per run</li>
+                  <li>Run monthly → ≈ £12,000/year saved</li>
+                </ul>
+                <p className="mt-2 text-xs text-slate-400">Note: Client uses GBP; values shown in GBP.</p>
               </div>
             </div>
           </div>
