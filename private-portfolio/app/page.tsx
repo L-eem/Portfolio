@@ -110,7 +110,7 @@ export default function Home() {
               />
               <div>
                 <h1 className="text-2xl md:text-4xl font-bold text-white">Salim Arikat</h1>
-                <p className="mt-2 text-sm md:text-lg text-white/85">Voice AI Developer | Automation & System Integrations</p>
+                <p className="mt-2 text-sm md:text-lg text-white/85">Voice AI Developer | Automation & System Integrations | Full‑stack Developer</p>
                 <div className="mt-3 md:mt-3 flex flex-wrap md:flex-nowrap items-center gap-2 text-xs md:text-sm whitespace-nowrap">
                   <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 md:px-3 md:py-1 text-emerald-300">Available now</span>
                   <span className="badge-glow rounded-full border border-emerald-400/40 bg-emerald-400/15 px-2 py-0.5 md:px-3 md:py-1 text-emerald-200">100% client satisfaction</span>
@@ -176,12 +176,12 @@ export default function Home() {
             {projects.map((p) => (
               <ProjectCard key={p.id} project={p} />
             ))}
-          </div>
+        </div>
         </section>
 
-        
-
-        
+        <footer className="mx-auto w-full max-w-6xl px-4 md:px-6 pb-8 text-xs text-white/60">
+          Website built by myself with prompt engineering
+        </footer>
       </main>
       
     </>
