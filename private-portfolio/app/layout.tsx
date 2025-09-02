@@ -5,6 +5,7 @@ import { ControlsProvider, MotionDefaults } from "@/components/controls/Controls
 import ControlsPanel from "@/components/controls/ControlsPanel";
 import RouteTransition from "@/components/RouteTransition";
 import AmbientSound from "@/components/AmbientSound";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +50,7 @@ export default function RootLayout({
           <AmbientSound />
           {children}
           <ControlsPanel />
+          <Analytics />
         </ControlsProvider>
       </body>
     </html>
