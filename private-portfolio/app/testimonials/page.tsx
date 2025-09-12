@@ -59,6 +59,14 @@ const testimonials: Testimonial[] = [
     role: "CEO",
     company: "Slyte",
   },
+  {
+    id: "yusuf",
+    quote:
+      "Working with Salim has been a pleasure. The peace of mind knowing we could rely on a competent, resourceful and capable developer was important to us as we wanted to fulfil and deliver the best outcomes for our clients.\n\nHaving his strategic views on how best to structure and build automations was pivotal in creating work that was purposeful and impactful.\n\nWe 100% recommend Salim for dev work, AI systems and custom automations, and we look forward to further projects with him.",
+    author: "Yusuf Kissi",
+    role: "CEO",
+    company: "Streemline AI",
+  },
 ];
 
 export default function TestimonialsPage() {

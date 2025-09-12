@@ -105,11 +105,11 @@ export default function Home() {
             <div className="flex items-center gap-4">
               <img
                 src="/pfp.jpeg"
-                alt="Salim Arikat"
+                alt="Salim A"
                 className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border border-white/15"
               />
               <div>
-                <h1 className="text-2xl md:text-4xl font-bold text-white">Salim Arikat</h1>
+                <h1 className="text-2xl md:text-4xl font-bold text-white">Salim A</h1>
                 <p className="mt-2 text-sm md:text-lg text-white/85">Voice AI Developer | Automation & System Integrations | Full‑stack Developer</p>
                 <div className="mt-3 md:mt-3 flex flex-wrap md:flex-nowrap items-center gap-2 text-xs md:text-sm whitespace-nowrap">
                   <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 md:px-3 md:py-1 text-emerald-300">Available now</span>

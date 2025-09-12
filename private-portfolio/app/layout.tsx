@@ -18,17 +18,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Salim Arikat — AI Voice & Automation Portfolio",
+  title: "Salim A — AI Voice & Automation Portfolio",
   description: "AI voice, automation, and data integrations",
   openGraph: {
-    title: "Salim Arikat — AI Voice & Automation Portfolio",
+    title: "Salim A — AI Voice & Automation Portfolio",
     description: "Recent AI/Automation projects: voice agents, scheduling, data flows",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Salim Arikat Portfolio",
+        alt: "Salim A Portfolio",
       },
     ],
   },
